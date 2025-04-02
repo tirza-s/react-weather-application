@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-font: Noto Sans JP, sans-serif;
+  --primary-color: rgb(229, 186, 115);
+  --secondary-color: rgb(197, 137, 64);
+  --teriary-color: rgb(68, 68, 68);
+  --background-color: rgba(236, 237, 241, 0.392);
+  --body-color: linear-gradient(109.6deg, rgb(223, 234, 247) 11.2%, rgb(244, 248, 252) 91.1%);
+  --container-color: rgba(117, 178, 214, 0.91);
+  --hr--color: rgba(169, 171, 180, 0.243);
+  --days-color: rgba(234, 223, 209, 0.638);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 80px;
+  font-family: var(--primary-font);
+  background: var(--body-color);
+}
+
+h1,
+h2,
+h3,
+p,
+#temperature-value,
+#temperature-unit {
+  color: var(--teriary-color);
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+.current-city {
+  margin-top: 20px;
+}
+
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 875px;
+  margin: 0 auto;
+  background-color: var(--container-color);
+  border-radius: 5px 50px 5px;
+  padding-bottom: 36px;
+}
+
+.weather-wrapper {
+  text-align: center;
+}
+
+
+@media (max-width:768px) {
+
+  /* Flex grow : 1 - the item can grow if there's available space */
+  /* Flex shrink : 1 - the item can shrink if needed */
+  /* The item will initially take up 50% of the container's width, but with 1rem subtracted from that (to add spacing between the items)*/
+
+  .forecast-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  input {
+    padding: 7px 14px;
+    width: 100%;
+    font-size: 10px;
+    padding-left: 0px;
+    margin-left: 5px;
+  }
+
+  button {
+    margin-right: 7px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .current-weather-main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+}
+
+
+aside {
+  padding-top: 32px;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+input {
+  padding: 12px 10px;
+  width: 68%;
+}
+
+input,
+button {
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-family: var(--primary-font);
+}
+
+button {
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--teriary-color);
+  padding: 12px 25px;
+}
+
+.current-weather-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+#temperature-icon {
+  font-size: 4rem;
+  margin: 0px;
+}
+
+#temperature-unit,
+#temperature-value {
+  font-size: 3rem;
+}
+
+.forecast-icon {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.forecast-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.days {
+  background-color: var(--days-color);
+  padding: 0 42px;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.day {
+  margin-bottom: 0;
+}
+
+.forecast-unit {
+  margin-top: 8px;
+}
+
+hr {
+  color: var(--hr--color);
+  margin-top: 38px;
+  margin-bottom: 8px;
+  max-width: 80%;
+}
+
+.forecast-middle-line {
+  border: 0;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+
+  &:before {
+    content: "\2022 \2022 \2022 \2022 \2022";
+    letter-spacing: 12px;
+    font-size: 45px;
+    color: var(--secondary-color);
+  }
+
 }
