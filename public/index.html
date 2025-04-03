@@ -16,90 +16,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 
-  <!--CSS goes below-->
-  <link rel="stylesheet" href="./src/style.css">
 
   <title>React Weather App</title>
 </head>
 
 <body>
-  <div class="container">
-    <!--Search input-->
-    <div class="weather-wrapper">
-      <header>
-        <form role="search" aria-label="Search for city weather">
-          <input type="search" id="search-input" placeholder="Search for a city">
-          <button>Search</button>
-        </form>
-      </header>
-      <hr>
-
-      <!--Main weather info-->
-      <main class="current-weather-main">
-        <div class="current-weather-details">
-          <h1 class="current-city">Brussels</h1>
-
-          <p>
-            <span id="time">Fri, 21 March | </span>
-            <span id="description">Sunny</span>
-          </p>
-          <p>
-            <span id="humidity-details">Humidity 💧65% | </span>
-            <span id="winds-speed">Wind 💨 5</span>
-          </p>
-        </div>
-
-
-        <div class="temperature-icon">
-          <span id="temperature-icon">🌤️</span>
-          <span id="temperature-value">17</span>
-          <span id="temperature-unit">°C</span>
-        </div>
-
-      </main>
-    </div>
-
-    <hr class="forecast-middle-line">
-    <!--Forecast details-->
-    <aside>
-      <h3>6 Days Forecast</h3>
-      <div class="forecast-wrapper">
-        <div class="days">
-          <p class="day">Sat</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">11°C</p>
-        </div>
-        <div class="days">
-          <p class="day">Sun</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">16°C</p>
-        </div>
-        <div class="days">
-          <p class="day">Mon</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">12°C</p>
-        </div>
-
-        <div class="days">
-          <p class="day">Tue</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">19°C</p>
-        </div>
-        <div class="days">
-          <p class="day">Wed</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">21°C</p>
-        </div>
-        <div class="days">
-          <p class="day">Thur</p>
-          <p class="forecast-icon">🌤️</p>
-          <p class="forecast-unit">22°C</p>
-        </div>
-
-      </div>
-      <hr>
-    </aside>
-  </div>
+  <div id="root"></div>
 
 </body>
 

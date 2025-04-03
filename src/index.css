@@ -30,15 +30,24 @@ h1 {
   font-size: 2.8rem;
 }
 
-.current-city {
-  margin-top: 20px;
-}
-
-
 h3 {
   margin-top: 0px;
   margin-bottom: 40px;
   text-align: center;
+}
+
+ul {
+  padding: 0;
+  padding-left: 2px;
+  text-align: left;
+  margin-top: 35px;
+}
+
+li {
+  color: var(--teriary-color);
+  font-size: 0.9rem;
+  list-style: none;
+  line-height: 2;
 }
 
 .container {
@@ -48,6 +57,10 @@ h3 {
   background-color: var(--container-color);
   border-radius: 5px 50px 5px;
   padding-bottom: 36px;
+}
+
+.current-city {
+  margin-top: 20px;
 }
 
 .weather-wrapper {
@@ -90,7 +103,6 @@ h3 {
 
 }
 
-
 aside {
   padding-top: 32px;
 }
@@ -104,7 +116,7 @@ form {
 
 input {
   padding: 12px 10px;
-  width: 68%;
+  width: 65%;
 }
 
 input,
@@ -123,25 +135,39 @@ button {
   padding: 12px 25px;
 }
 
+
 .current-weather-main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-#temperature-icon {
-  font-size: 4rem;
-  margin: 0px;
+.weather-container {
+  display: flex;
+  align-items: center;
+  /*keep the icon become too big*/
+  gap: 15px;
+  padding-bottom: 80px;
+  flex-direction: row;
+
 }
 
-#temperature-unit,
-#temperature-value {
+.weather-container svg {
+  flex-shrink: 0;
+  /* Prevents the icon from shrinking */
+}
+
+.current-temperature {
   font-size: 3rem;
+  font-weight: 800;
 }
 
-.forecast-icon {
-  font-size: 2.5rem;
-  margin: 0;
+.unit {
+  font-size: 1.5rem;
+  position: relative;
+  top: -16px;
+
 }
+
 
 .forecast-wrapper {
   display: flex;
@@ -169,7 +195,7 @@ hr {
   color: var(--hr--color);
   margin-top: 38px;
   margin-bottom: 8px;
-  max-width: 80%;
+  max-width: 78%;
 }
 
 .forecast-middle-line {
