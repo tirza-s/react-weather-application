@@ -63,10 +63,22 @@ li {
   margin-top: 20px;
 }
 
+.data-description {
+  margin-top: -14px
+}
+
 .weather-wrapper {
   text-align: center;
 }
 
+.data-description,
+.formatted-date {
+  font-size: 1.1rem;
+}
+
+.formatted-date {
+  margin-bottom: 12px;
+}
 
 @media (max-width:768px) {
 
@@ -101,6 +113,29 @@ li {
     flex-direction: column-reverse;
   }
 
+  .temperature-data {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .weather-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 28px;
+  }
+
+  .date-description {
+    text-align: center;
+  }
+
+  .current-city {
+    margin-top: -55px;
+
+  }
+
+
+
 }
 
 aside {
@@ -113,6 +148,22 @@ form {
   justify-content: center;
 }
 
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--container-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
 
 input {
   padding: 12px 10px;

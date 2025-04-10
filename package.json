@@ -39,6 +39,17 @@
       "last 1 safari version"
     ]
   },
+  "preset": [
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "scripts": {
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start"
+  },
   "emmet.includeLanguages": {
     "javascript": "html",
     "javascriptreact": "html"

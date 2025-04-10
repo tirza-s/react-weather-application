@@ -1,23 +1,22 @@
 import React from "react";
-import Weather from "./Weather";
+import Weather from "../src/Weather";
 
 function App() {
   return (
 
     <div className="App">
-      <div className="container">
-        <footer>
-          This project was coded by {" "}
-          <a href="https://tirzasamosir.netlify.app/" target="_blank" rel="noopener noreferrer">Tirza Samosir</a>{" "} and is {" "}
+      <Weather defaultCity="Brussels" />
+      <footer>
+        This project was coded by {" "}
+        <a href="https://tirzasamosir.netlify.app/" target="_blank" rel="noopener noreferrer">Tirza Samosir</a>{" "} and is {" "}
+        open-sourced on
+        <a href="https://github.com/tirza-s" target="_blank" rel="noopener noreferrer"> github</a>
+      </footer>
 
-          <a href="https://github.com/tirza-s" target="_blank" rel="noopener noreferrer">open-sourced on github</a>
-        </footer>
-
-      </div>
-    </div>
+    </div >
 
   );
 
 }
 
-export default Weather;
+export default App;
