@@ -61,6 +61,8 @@ li {
 
 .current-city {
   margin-top: 20px;
+  margin-right: 34px;
+
 }
 
 .data-description {
@@ -71,13 +73,13 @@ li {
   text-align: center;
 }
 
-.data-description,
-.formatted-date {
+.data-description {
   font-size: 1.1rem;
 }
 
 .formatted-date {
   margin-bottom: 12px;
+  font-size: 0.9rem;
 }
 
 @media (max-width:768px) {
@@ -125,17 +127,13 @@ li {
     margin-top: 28px;
   }
 
-  .date-description {
+  .descriptions {
     text-align: center;
   }
 
   .current-city {
     margin-top: -55px;
-
   }
-
-
-
 }
 
 aside {
@@ -186,7 +184,6 @@ button {
   padding: 12px 25px;
 }
 
-
 .current-weather-main {
   display: flex;
   justify-content: space-evenly;
@@ -199,7 +196,6 @@ button {
   gap: 15px;
   padding-bottom: 80px;
   flex-direction: row;
-
 }
 
 .weather-container svg {
@@ -216,9 +212,7 @@ button {
   font-size: 1.5rem;
   position: relative;
   top: -16px;
-
 }
-
 
 .forecast-wrapper {
   display: flex;
@@ -261,5 +255,4 @@ hr {
     font-size: 45px;
     color: var(--secondary-color);
   }
-
 }
