@@ -67,28 +67,28 @@ export default function Weather(props) {
                         <div className="forecast-wrapper">
                             <div className="days">
                                 <p className="day">Sat</p>
-                                <p className="forecast-icon">🌤️</p>
+                                <span role="img" aria-label="weather icon">🌦️</span>
                                 <p className="forecast-unit">11°C</p>
                             </div>
                             <div className="days">
                                 <p className="day">Sun</p>
-                                <p className="forecast-icon">🌤️</p>
+                                <span role="img" aria-label="weather icon">🌦️</span>
                                 <p className="forecast-unit">16°C</p>
                             </div>
                             <div className="days">
                                 <p className="day">Mon</p>
-                                <p className="forecast-icon">🌤️</p>
+                                <span role="img" aria-label="weather icon">🌦️</span>
                                 <p className="forecast-unit">12°C</p>
                             </div>
 
                             <div className="days">
                                 <p className="day">Tue</p>
-                                <p className="forecast-icon">🌤️</p>
+                                <span role="img" aria-label="weather icon">🌦️</span>
                                 <p className="forecast-unit">19°C</p>
                             </div>
                             <div class="days">
                                 <p className="day">Wed</p>
-                                <p className="forecast-icon">🌤️</p>
+                                <span role="img" aria-label="weather icon">🌦️</span>
                                 <p className="forecast-unit">21°C</p>
                             </div>
 
