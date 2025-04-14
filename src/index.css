@@ -59,10 +59,17 @@ li {
   padding-bottom: 36px;
 }
 
-.current-city {
-  margin-top: 20px;
-  margin-right: 34px;
+.current-weather-details {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
 
+.current-city {
+  margin-top: 25px;
+  margin-bottom: 0;
+  margin-right: 0;
+  text-align: left;
 }
 
 .data-description {
@@ -82,6 +89,7 @@ li {
   font-size: 0.9rem;
 }
 
+/* TODO :Center the current-city on smaller screens */
 @media (max-width:768px) {
 
   /* Flex grow : 1 - the item can grow if there's available space */
@@ -110,21 +118,30 @@ li {
     margin-top: 0;
   }
 
-  .current-weather-main {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
   .temperature-data {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+  }
+
+  .current-weather-main {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .current-weather-details {
+    order: -1;
+    /* Moves this section to the top */
   }
 
   .weather-container {
     display: flex;
     margin: 0 auto;
     margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    /* Stack icon + temp + humidity vertically */
+
   }
 
   .descriptions {
@@ -132,8 +149,17 @@ li {
   }
 
   .current-city {
-    margin-top: -55px;
+    margin-top: 24px;
+    text-align: center;
   }
+}
+
+/* end of media query*/
+
+.temperature-data {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 aside {
@@ -212,6 +238,18 @@ button {
   font-size: 1.5rem;
   position: relative;
   top: -16px;
+}
+
+.celcius-unit,
+.fahrenheit-unit {
+  color: var(--teriary-color);
+  text-decoration: none;
+}
+
+.celcius-unit:hover,
+.fahrenheit-unit:hover {
+  color: var(--secondary-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .forecast-wrapper {
