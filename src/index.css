@@ -60,7 +60,7 @@ li {
 }
 
 .current-weather-details {
-  width: 33%;
+  width: 35%;
   display: flex;
   flex-direction: column;
 }
@@ -80,6 +80,10 @@ li {
   text-align: center;
 }
 
+.current-weather-value {
+  margin-top: 2px;
+}
+
 .data-description {
   font-size: 1.1rem;
 }
@@ -89,77 +93,11 @@ li {
   font-size: 0.9rem;
 }
 
-/* TODO :Center the current-city on smaller screens */
-@media (max-width:768px) {
-
-  /* Flex grow : 1 - the item can grow if there's available space */
-  /* Flex shrink : 1 - the item can shrink if needed */
-  /* The item will initially take up 50% of the container's width, but with 1rem subtracted from that (to add spacing between the items)*/
-
-  .forecast-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 calc(50% - 1rem);
-  }
-
-  input {
-    padding: 7px 14px;
-    width: 100%;
-    font-size: 10px;
-    padding-left: 0px;
-    margin-left: 5px;
-  }
-
-  button {
-    margin-right: 7px;
-  }
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .temperature-data {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .current-weather-main {
-    display: flex;
-    flex-direction: column;
-
-  }
-
-  .current-weather-details {
-    order: -1;
-    /* Moves this section to the top */
-  }
-
-  .weather-container {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    /* Stack icon + temp + humidity vertically */
-
-  }
-
-  .descriptions {
-    text-align: center;
-  }
-
-  .current-city {
-    margin-top: 24px;
-    text-align: center;
-  }
-}
-
-/* end of media query*/
 
 .temperature-data {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 21px;
 }
 
 aside {
@@ -221,7 +159,8 @@ button {
   /*keep the icon become too big*/
   gap: 15px;
   padding-bottom: 80px;
-  flex-direction: row;
+  padding-bottom: 0px;
+  margin-bottom: 71px;
 }
 
 .weather-container svg {
@@ -252,6 +191,7 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
+/* Forecast style goes bellow*/
 .forecast-wrapper {
   display: flex;
   align-items: center;
@@ -259,15 +199,29 @@ button {
   gap: 1rem;
 }
 
+.forecast-min-max {
+  display: flex;
+}
+
+.forecast-unit-min {
+  padding-left: 10px;
+  opacity: 0.75;
+}
+
+.forecast-icon {
+  text-align: center;
+}
+
 .days {
   background-color: var(--days-color);
-  padding: 0 42px;
   border-radius: 8px;
+  padding-left: 22px;
+  padding-right: 22px;
   justify-content: center;
 }
 
 .day {
-  margin-bottom: 0;
+  text-align: center;
 }
 
 .forecast-unit {
@@ -284,7 +238,7 @@ hr {
 .forecast-middle-line {
   border: 0;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 4px;
   margin-bottom: 0;
 
   &:before {
@@ -294,3 +248,82 @@ hr {
     color: var(--secondary-color);
   }
 }
+
+@media (max-width:768px) {
+
+  /* Flex grow : 1 - the item can grow if there's available space */
+  /* Flex shrink : 1 - the item can shrink if needed */
+  /* The item will initially take up 50% of the container's width, but with 1rem subtracted from that (to add spacing between the items)*/
+
+  .forecast-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .fahrenheit-unit {
+    font-size: 1rem;
+    top: -16;
+  }
+
+  span .unit {
+    font-size: 1rem;
+    top: -16;
+  }
+
+  input {
+    padding: 7px 14px;
+    width: 100%;
+    font-size: 0.95rem;
+    margin-left: 5px;
+  }
+
+  button {
+    margin-right: 7px;
+    padding: 11px 14px;
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .temperature-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .current-weather-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .current-weather-value {
+    margin-bottom: -37px;
+  }
+
+  .current-weather-details {
+    order: -1;
+    /* Moves this section to the top */
+    width: 100%;
+  }
+
+  .weather-container {
+    margin-top: 18px;
+    margin-bottom: -41px;
+    flex-direction: column;
+    /* Stack icon + temp + humidity vertically */
+  }
+
+  .descriptions {
+    text-align: center;
+  }
+
+  .current-city {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+}
+
+/* end of media query*/

@@ -3,17 +3,20 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo.js";
+import WeatherForecast from "./WeatherForecast.js"
 
 export default function Weather(props) {
 
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
     function handleResponse(response) {
+
         console.log(response.data);
 
         setWeatherData({
             ready: true,
             city: response.data.name,
+            coordinates: response.data.coord,
             description: response.data.weather[0].description,
             date: new Date(response.data.dt * 1000),
             humidity: response.data.main.humidity,
@@ -24,7 +27,7 @@ export default function Weather(props) {
     }
 
     function search() {
-        const apiKey = "af533468bd45376f5296a15bb02118b1";
+        const apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
         axios.get(apiUrl).then(handleResponse);
@@ -64,35 +67,8 @@ export default function Weather(props) {
                     {/* 5days Weather forecast  */}
                     <aside>
                         <h3>5 Days Forecast</h3>
-                        <div className="forecast-wrapper">
-                            <div className="days">
-                                <p className="day">Sat</p>
-                                <span role="img" aria-label="weather icon">🌦️</span>
-                                <p className="forecast-unit">11°C</p>
-                            </div>
-                            <div className="days">
-                                <p className="day">Sun</p>
-                                <span role="img" aria-label="weather icon">🌦️</span>
-                                <p className="forecast-unit">16°C</p>
-                            </div>
-                            <div className="days">
-                                <p className="day">Mon</p>
-                                <span role="img" aria-label="weather icon">🌦️</span>
-                                <p className="forecast-unit">12°C</p>
-                            </div>
-
-                            <div className="days">
-                                <p className="day">Tue</p>
-                                <span role="img" aria-label="weather icon">🌦️</span>
-                                <p className="forecast-unit">19°C</p>
-                            </div>
-                            <div class="days">
-                                <p className="day">Wed</p>
-                                <span role="img" aria-label="weather icon">🌦️</span>
-                                <p className="forecast-unit">21°C</p>
-                            </div>
-
-                        </div>
+                        {/*Weather forecast componet*/}
+                        <WeatherForecast coordinates={weatherData.coordinates} />
                         <hr />
                     </aside>
                 </div>
